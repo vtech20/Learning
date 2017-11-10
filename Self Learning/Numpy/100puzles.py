@@ -7,6 +7,8 @@ Created on Wed Oct 18 18:41:17 2017
 # Q1.
 import numpy as np
 import sys as s
+import calendar
+
 # Q2.
 print(np.version.version)
 print(np.show_config())
@@ -128,5 +130,70 @@ aa= np.random.randint(0,10,10)
 bb= np.random.randint(0,10,10)
 print(np.intersect1d(aa,bb))
 
+# Q.31 Numpy raise error
+old_settings = np.seterr(all='warn', over='raise')
+#Q32. Is the following expression true
+np.sqrt(-1) == np.emath.sqrt(-1)
+# Q33. How to get the dates of yesterday, today and tomorrow?
+from datetime import date,timedelta
+print(date.today() - timedelta(1))
+print(date.today() + timedelta(1))
+#Q34. How to get all the dates corresponding to the month of July 2016? 
+print(np.arange('2016-07', '2016-08', dtype='datetime64[D]'))
+#Q35.How to compute ((A+B)*(-A/2)) in place (without copy)
+# np.add(out=), np.negative(out=), np.multiply(out=), np.divide(out=)
+a=5
+b=6
+print(np.multiply(np.add(a,b),np.divide(np.negative(a),2)))
+# Q36. Extract the integer part of a random array using 5 different methods
+Z = np.random.uniform(0,10,10)
 
+print (Z - Z%1)
+print (np.floor(Z))
+print (np.ceil(Z)-1)
+print (Z.astype(int))
+print (np.trunc(Z))
 
+#Q37. Create a 5x5 matrix with row values ranging from 0 to 4 
+a = np.zeros((5,5))
+a+=np.arange(5)
+print(a)
+
+#38. Consider a generator function that generates 10 integers and use it to build an array
+iterable = (x*x for x in range(10))
+print(iterable)
+np.fromiter(iterable,dtype = float,count=-1)
+
+#Q39. Create a vector of size 10 with values ranging from 0 to 1, both excluded 
+np.linspace(0,1,endpoint=False)
+#Q40. Create a random vector of size 10 and sort it 
+xRand10 = np.random.random(10)
+xRand10.sort()
+print(xRand10)
+
+#Q41. How to sum a small array faster than np.sum?
+tenelms = np.arange(10)
+np.add.reduce(tenelms)
+
+#Q42.Consider two random array A and B, check if they are equal (★★☆)
+aArr = np.random.randint(0,2,5)
+bArr = np.random.randint(0,2,5)
+np.array_equal(aArr,bArr)
+
+#43. Make an array immutable 
+immutArr = np.zeros(10)
+immutArr.flags.writeable = False
+immutArr[1] = 4
+        
+#Q44. Consider a random 10x2 matrix representing cartesian coordinates, 
+#convert them to polar coordinates (★★☆)¶
+#(hint: np.sqrt, np.arctan2)
+randArr = np.random.random((10,2))
+x,y = randArr[:,0] , randArr[:,1] 
+t = np.arctan2(y,x)
+print(t)
+
+#45. Create random vector of size 10 and replace the maximum value by 0 (★★☆)
+#(hint: argmax)
+rand10 = np.random.randint(10)
+np.argmax(rand10,axis=0)
