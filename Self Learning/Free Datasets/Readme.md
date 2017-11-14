@@ -1,6 +1,6 @@
 Legend:
 
 
-#  - Baradh
-*  - Vignesh
-@ - Kannan
+For #  - Baradh
+For *  - Vignesh
+For @ - Kannan
