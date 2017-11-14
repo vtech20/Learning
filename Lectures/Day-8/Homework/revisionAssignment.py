@@ -4,6 +4,7 @@ Created on Sat Nov  4 11:26:38 2017
 
 @author: baradhwaj
 """
+
 import os
 import numpy as np 
 import pandas as pd
@@ -14,7 +15,7 @@ import matplotlib.pyplot as plt
 #just convert the data type; it will then have junk numbers. You have to remove commas.
 # File Read
 os.getcwd()
-os.chdir("G:\Python-Learning\Lectures\Day-8\Homework")
+os.chdir("G:\Python\Learning\Lectures\Day-8\Homework")
 empData = pd.read_csv("data\\ssamatab1.csv",thousands =',')
 print(empData)
 
@@ -29,6 +30,8 @@ empData.loc[empData['Unemployment Rate'] ==mostUnemployed,["Area","Year","Month"
 #Q4. Which state had the highest ever unemployment rate and when did that happen?
 mostUnemployed = np.max(empData['Unemployment Rate'])
 empData.loc[empData['Unemployment Rate'] ==mostUnemployed,["State FIPS Code","Year","Month"]]
+# Calculate avg unemploymet of each state
+
 
 #Q5.Obtain Yearly Unemployment rate by aggregating the data. One way would be to take
 #average of unemployment rate column directly. But that's not mathematically right. You

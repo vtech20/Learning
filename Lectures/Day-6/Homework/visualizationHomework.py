@@ -8,9 +8,10 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+
 #import datetime
 os.getcwd()
-os.chdir("G:\Python-Learning\Lectures\Day-5\Homework")
+os.chdir("G:\Python\Learning\Lectures\Day-5\Homework")
 airquality_data = pd.read_csv("data\\airquality.csv")
 print(airquality_data)
 #1. Get the histogram distribution of Solar.R
@@ -48,20 +49,32 @@ plt.scatter("Temp",'Solar.R',data = airquality_data,c = "red")
 airquality_data.index = pd.date_range(start='1973-05-01', periods=153, freq='D')
 solarRData = airquality_data['Solar.R'].plot.line()
 solarRData.set_ylabel('Solar.R')
+
+# or 
+date_stamp = "1973-" + \
+airquality_data["Month"].map(str)+"-"+\
+airquality_data["Day"].map(str)
+
+airquality_data.index = pd.to_datetime(date_stamp)
+
+solarRData = airquality_data['Solar.R'].plot.line()
+solarRData.set_ylabel('Solar.R')
+
+solarRData = airquality_data['Temp'].plot.line()
+solarRData.set_ylabel('Temp')
+
 ############################# MT Cars ##############################
 os.getcwd()
-os.chdir("G:\Python-Learning\Lectures\Day-5\Homework")
+os.chdir("G:\Python\Learning\Lectures\Day-5\Homework")
 mtcars_data = pd.read_csv("data\\mtcars.csv")
 print(mtcars_data)
 
 ##1. Compare the mpg boxplot distribution of automatic vs manual transmission cars
 
 mtcars_data['mpg'].plot.box(by='vs') # pandas 
-mtcars_data.boxplot(column='mpg',by='vs') # matlablib
-
+pl = mtcars_data.boxplot(column='mpg',by='vs') # matlablib
 # 2.Compare the boxplot distribution of mpg of cars by gears and transmission. One mpg 
 #distribution box per gear-am combination
-
 mtcars_data.boxplot(column='mpg',by=['am','gear']) # matlablib
 #or
 fig = plt.figure()
