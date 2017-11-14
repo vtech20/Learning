@@ -1,6 +1,16 @@
 URL : https://github.com/fivethirtyeight/data/blob/master/airline-safety/airline-safety.csv
 Questions for graphs and data analysis:
 -------------------------------------------------------------------------------------------------------------------------------------
+# Which flight has maximum occupancy
+
+# which flight has least fatalities with maximum occuapcy  -  Doesnt make sense
+
+# which flight has most fatalities with maximum occuapcy -  Doesnt make sense
+
+# which flight has least fatalities with minimum occuapcy -  Doesnt make sense
+
+# which flight has most fatalities with minimum occuapcy -  Doesnt make sense
+
 # Comparitive study of incidence b/w 85 - 99 and 00 - 14
 
 # Comparitive study of accidents b/w 85 - 99 and 00 - 14
@@ -24,16 +34,6 @@ Questions for graphs and data analysis:
 # Which airline has caused maximum death ? (fatality) sum up both year ranges
 
 # Which airline has caused minimum death ? (fatality) sum up both year ranges
-
-# Which flight has maximum occupancy
-
-# which flight has least fatalities with maximum occuapcy
-
-# which flight has most fatalities with maximum occuapcy
-
-# which flight has least fatalities with minimum occuapcy
-
-# which flight has most fatalities with minimum occuapcy
 
 # Add a new column Continent and update the column based on the airline data
 
