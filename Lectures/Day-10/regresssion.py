@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import statsmodels.formula.api as smf
+import seaborn
 # DV: HWT  IDV : BWT
 # Step 1 : 
 os.getcwd()
@@ -58,13 +59,13 @@ print(weightGain)
 plt.scatter("metmin" ,"wg",data=weightGain)
 plt.ylabel("Weight Gain (g)")
 plt.xlabel("Metmin")
-# Step 3
-weightGain["metmin"].corr(weightGain["wg"])
-# Step 4:
+# Step 3  correletion : -0.90625914221504655
+weightGain["metmin"].corr(weightGain["wg"]) 
+# Step 4: 
 wg_linear_model = smf.ols(formula='wg ~ metmin', data = weightGain).fit()
 wg_linear_model.summary()
-# Wg = m* metmin + C
-#wg =-0.0189*metmin +54.1624
+# Formula: Wg = m* metmin + C
+# Substitution : wg =-0.0189*metmin +54.1624
 #15 , 	1790
 metmin = 1790
 predictedwg = -0.0189*metmin +54.1624
