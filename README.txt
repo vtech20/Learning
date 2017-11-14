@@ -24,6 +24,9 @@ https://github.com/bulutyazilim/awesome-datascience
 
 https://github.com/datasciencemasters/go
 
+DataSets:
+https://github.com/fivethirtyeight/data
+
 
 Blogs:
 https://pythonandr.com/
